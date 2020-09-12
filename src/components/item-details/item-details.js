@@ -13,41 +13,16 @@ export default class ItemDetails extends Component {
     ItemsInfo: {},
   };
 
-  /* тяжёлые танки 
   componentDidUpdate(prevProps) {
     if (prevProps.selectedItem !== this.props.selectedItem) {
-      this.tankopediaService.getHeavy(this.props.selectedItem).then(data => {
+      this.props.getData(this.props.selectedItem).then(data => {
         this.setState({
           ItemsInfo: data,
         });
       });
       //console.log(this.state);
     }
-  }*/
-
-  /* средние танки*/
-   componentDidUpdate(prevProps) {
-    if (prevProps.selectedItem !== this.props.selectedItem) {
-      this.tankopediaService.getMedium(this.props.selectedItem).then(data => {
-        this.setState({
-          ItemsInfo: data,
-        });
-      });
-      //console.log(this.state);
-    }
-  } 
-
-  /* лёгкие танки
-  componentDidUpdate(prevProps) {
-    if (prevProps.selectedItem !== this.props.selectedItem) {
-      this.tankopediaService.getLight(this.props.selectedItem).then(data => {
-        this.setState({
-          ItemsInfo: data,
-        });
-      });
-      //console.log(this.state.image);
-    }
-  } */
+  }
 
   render() {
     const { id, name } = this.state.ItemsInfo;

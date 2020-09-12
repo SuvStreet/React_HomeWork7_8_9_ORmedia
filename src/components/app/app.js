@@ -2,114 +2,81 @@ import React, { Component } from "react";
 
 import Header from "../header";
 import RandomTanks from "../random-tanks";
-import ItemList from "../item-list/item-list";
-import ItemDetails from "../item-details";
+import { HeavyList, MediumList, LightList } from "../wot-components/list";
+import { HeavyDetails, MediumDetails, LightDetails } from "../wot-components/details";
 import TankopediaService from "../../services/tankopedia-service";
 import Column from "../column";
-import Record from "../record";
+import { TankopediaServiceProvider } from "../../context";
+import TestService from "../../services/test-services";
 
 import "./app.css";
 
 export default class App extends Component {
   tankopediaService = new TankopediaService();
+  // тест смена сервера с данными
+  testService = new TestService();
 
   state = {
     showRandomTanks: true,
-    selectedItem: null,
-    image: "",
+    //selectedHeavy: null,
+    //selectedMedium: null,
+    //selectedLight: null,
   };
 
-  onSelectedItem = (id) => {
-    //console.log(id);
+  onSelectedHeavy = (id) => {
     this.setState(() => {
       return {
-        selectedItem: id,
+        selectedHeavy: id,
       };
     });
-    //console.log(this.state);
+  };
+
+  onSelectedMedium = (id) => {
+    this.setState(() => {
+      return {
+        selectedMedium: id,
+      };
+    });
+  };
+
+  onSelectedLight = (id) => {
+    this.setState(() => {
+      return {
+        selectedLight: id,
+      };
+    });
   };
 
   render() {
     const tanks = this.state.showRandomTanks ? <RandomTanks /> : null;
-    const { getLightImage, getHeavyImage, getMediumImage, getAllHeavy, getAllMedium, getAllLight } = this.tankopediaService;
+    const { selectedHeavy, selectedMedium, selectedLight } = this.state;
 
     // тяжёлые танки 
-    /* const HeavyDetails = (
-      <ItemDetails
-        selectedItem={this.state.selectedItem}
-        getImage={getHeavyImage} >
-        <Record label="Damage" field="damage" />
-        <Record label="Breaking Through" field="breakingThrough" />
-        <Record label="Weight" field="weight" />
-        <Record label="Strength" field="strength" />
-        <Record label="Body Armor" field="bodyArmor" />
-        <Record label="Tower Armor" field="towerArmor" />
-      </ItemDetails>
-    );
-    const HeavyList = (
-      <ItemList
-        onSelectedItem={this.onSelectedItem}
-        getData={getAllHeavy}
-      >
-        {(item) => `${item.name}`}
-      </ItemList>
-    ); */
+    const heavyDetails = <HeavyDetails selectedItem={selectedHeavy}></HeavyDetails>;
+    const heavyList = <HeavyList onSelectedItem={this.onSelectedHeavy}></HeavyList>;
 
     // Средние танки 
-    const MediumDetails = (
-      <ItemDetails
-        selectedItem={this.state.selectedItem}
-        getImage={getMediumImage} >
-        <Record label="Damage" field="damage" />
-        <Record label="Breaking Through" field="breakingThrough" />
-        <Record label="Maximum Speed" field="maximumSpeed" />
-        <Record label="Specific Power" field="specificPower" />
-        <Record label="Tower TurningSpeed" field="towerTurningSpeed" />
-      </ItemDetails>
-    );
-    const MediumList = (
-      <ItemList
-        onSelectedItem={this.onSelectedItem}
-        getData={getAllMedium}
-      >
-        {(item) => `${item.name}`}
-      </ItemList>
-    );
+    const mediumDetails = <MediumDetails selectedItem={selectedMedium}></MediumDetails>;
+    const mediumList = <MediumList onSelectedItem={this.onSelectedMedium}></MediumList>;
 
 
     // лёгкие танки
-    /* const LightDetails = (
-      <ItemDetails
-        selectedItem={this.state.selectedItem}
-        getImage={getLightImage} >
-        <Record label="Weight" field="weight" />
-        <Record label="Overview" field="overview" />
-        <Record label="Maximum Speed" field="maximumSpeed" />
-        <Record label="Specific Power" field="specificPower" />
-        <Record label="Engine Power" field="enginePower" />
-      </ItemDetails>
-    ); 
-    const LightList = (
-      <ItemList
-        onSelectedItem={this.onSelectedItem}
-        getData={getAllHeavy}
-      //renderItem={(item) => `${item.name} || ${item.overview}`} 
-      >
-        {(item) => `${item.name}`}
-      </ItemList>
-    );*/
+    const lightDetails = <LightDetails selectedItem={selectedLight}></LightDetails>;
+    const lightList = <LightList onSelectedItem={this.onSelectedLight}></LightList>;
 
     return (
-      <div className="tanksdb-app">
-        <Header />
-        {tanks}
-        {/* тяжёлые танки 
-        <Column top={HeavyDetails} bottom={HeavyList}></Column> */}
-        {/* средние танки*/}
-        <Column top={MediumDetails} bottom={MediumList}></Column>
-        {/* лёгкие танки
-        <Column top={LightDetails} bottom={LightList}></Column> */}
-      </div>
+      <TankopediaServiceProvider value={this.tankopediaService}>
+        <div className="tanksdb-app">
+          <Header />
+          {tanks}
+          {/* тяжёлые танки */}
+          <Column top={heavyDetails} bottom={heavyList}></Column>
+          {/* средние танки */}
+          <Column top={mediumDetails} bottom={mediumList}></Column>
+          {/* лёгкие танки */}
+          <Column top={lightDetails} bottom={lightList}></Column> 
+        </div>
+      </TankopediaServiceProvider>
     );
   }
 }

@@ -200,5 +200,57 @@
             "strength": "1 400 ед.",
             "overview": "390 м"
         }
+    ],
+    "medium": [
+        {
+            "id": 1,
+            "name": "Т-62А [TEST DATA]",
+            "damage": "320 / 320 / 420 ед.",
+            "breaking_through": "264 / 330 / 50 мм",
+            "maximum_speed": "50 км/ч",
+            "specific_power": "15,68 л.с./т",
+            "tower_turning_speed": "48 град/с",
+            "url": "http://localhost:3000/medium/1"
+        },
+        {
+            "id": 2,
+            "name": "Leopard 1 [TEST DATA]",
+            "damage": "420 / 420 / 510 ед.",
+            "breaking_through": "278 / 323 / 105 мм",
+            "maximum_speed": "70 км/ч",
+            "specific_power": "20,75 л.с./т",
+            "tower_turning_speed": "40 град/с",
+            "url": "http://localhost:3000/medium/2"
+        },
+        {
+            "id": 3,
+            "name": "T95E6 [TEST DATA]",
+            "damage": "400 / 400 / 515 ед.",
+            "breaking_through": "258 / 340 / 60 мм",
+            "maximum_speed": "56,30 км/ч",
+            "specific_power": "18,33 л.с./т",
+            "tower_turning_speed": "36 град/с",
+            "url": "http://localhost:3000/medium/3"
+        },
+        {
+            "id": 4,
+            "name": "121B [TEST DATA]",
+            "damage": "390 / 390 / 480 ед.",
+            "breaking_through": "261 / 350 / 105 мм",
+            "maximum_speed": "50 км/ч",
+            "specific_power": "17,50 л.с./т",
+            "tower_turning_speed": "42 град/с",
+            "url": "http://localhost:3000/medium/4"
+        },
+        {
+            "id": 5,
+            "name": "AMX 30 B [TEST DATA]",
+            "damage": "390 / 390 / 480 ед.",
+            "breaking_through": "248 / 300 / 53 мм",
+            "maximum_speed": "65 км/ч",
+            "specific_power": "20 л.с./т",
+            "tower_turning_speed": "38 град/с",
+            "url": "http://localhost:3000/medium/5"
+        }
     ]
 }

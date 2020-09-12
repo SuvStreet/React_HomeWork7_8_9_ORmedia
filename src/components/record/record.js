@@ -5,7 +5,6 @@ const Record = ({ ItemsInfo, field, label }) => {
       <li className="list-group-item">
         <span className="term">{label}</span>
         <span>{ItemsInfo[field]}</span>
-        {/* <span>{field}</span> */}
       </li>
     )
 }
