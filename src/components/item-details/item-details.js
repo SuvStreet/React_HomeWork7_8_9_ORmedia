@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import TankopediaService from "../../services/tankopedia-service";
 import ErrorButton from "../error-button";
 import ErrorBondary from "../error-boundary";
+import PropTypes from "prop-types";
 
 import "./item-details.css";
 
@@ -10,24 +11,60 @@ export default class ItemDetails extends Component {
   tankopediaService = new TankopediaService();
 
   state = {
-    ItemsInfo: {},
+    itemsInfo: {},
   };
+
+  /* static defaultProps = {
+    selectedItem: 1
+  } */
+
+  updateItem() {
+    const { selectedItem, getData } = this.props;
+
+    if (!selectedItem) {
+      return;
+    }
+
+    getData(selectedItem).then((data) => {
+      this.setState({
+        itemsInfo: data,
+      });
+    })
+  }
+
+  componentDidMount() {
+    this.updateItem();
+  }
 
   componentDidUpdate(prevProps) {
     if (prevProps.selectedItem !== this.props.selectedItem) {
+      this.updateItem();
+    }
+  }
+
+  /* componentDidUpdate(prevProps) {
+    if (prevProps.selectedItem !== this.props.selectedItem) {
       this.props.getData(this.props.selectedItem).then(data => {
         this.setState({
-          ItemsInfo: data,
+          itemsInfo: data,
+          image: this.props.getImage(data),
         });
       });
       //console.log(this.state);
     }
-  }
+  } */
 
   render() {
-    const { id, name } = this.state.ItemsInfo;
-    const { getImage, children } = this.props;
-    const { ItemsInfo } = this.state;
+    const { id, name } = this.state.itemsInfo;
+    const { getImage, children, selectedItem } = this.props;
+    const { itemsInfo } = this.state;
+    
+    if (!selectedItem) {
+      return <span>Select a person from a list</span>;
+    }
+
+    console.log(itemsInfo);
+
     return (
       <div className="tanks-details card">
         {<img
@@ -41,7 +78,7 @@ export default class ItemDetails extends Component {
             <h4>{name}</h4>
             <ul className="list-group list-group-flush">
               {React.Children.map(children, (child) => {
-                return React.cloneElement(child, { ItemsInfo });
+                return React.cloneElement(child, { itemsInfo });
               })}
               <ErrorButton />
             </ul>
@@ -52,3 +89,10 @@ export default class ItemDetails extends Component {
   }
 }
 
+/* ItemDetails.defaultProps = {
+  selectedItem: 1
+} */
+
+ItemDetails.propTypes = {
+  selectedItem: PropTypes.number
+}

@@ -1,30 +1,30 @@
-import React from 'react';
+import React from "react";
 
-import './header.css';
+import { Link } from "react-router-dom";
+
+import "./header.css";
 
 const Header = () => {
   return (
     <div className="header d-flex justify-content-center">
       <h3>
-        <a href="#/">
-          React Tankopedia
-        </a>
+        <Link to="/">React Tankopedia</Link>
       </h3>
       <ul className="d-flex">
         <li>
-          <a href="#/heavy">Heavy Tanks</a>
+          <Link to="/heavy">Heavy Tanks</Link>
         </li>
         <li>
-          <a href="#/medium">Medium Tanks</a>
+          <Link to="/medium">Medium Tanks</Link>
         </li>
         <li>
-          <a href="#/light">Light Tanks</a>
+          <Link to="/light">Light Tanks</Link>
         </li>
         <li>
-          <a href="#/pt-sau">Pt-Sau</a>
+          <Link to="/pt-sau">Pt-Sau</Link>
         </li>
         <li>
-          <a href="#/pt-sau">Sau</a>
+          <Link to="/sau">Sau</Link>
         </li>
       </ul>
     </div>

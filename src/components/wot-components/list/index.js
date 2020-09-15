@@ -1,3 +1,3 @@
-import { HeavyList, MediumList, LightList } from "./lists";
+import { HeavyList, MediumList, LightList, PtSauList, SauList } from "./lists";
 
-export { HeavyList, MediumList, LightList};
+export { HeavyList, MediumList, LightList, PtSauList, SauList };

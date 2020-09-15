@@ -2,7 +2,7 @@
     "heavy": [
         {
             "id": 1,
-            "name": "ИС-4",
+            "name": "ИС-4 [TEST DATA]",
             "damage": "390 / 390 / 530 ед.",
             "breaking_through": "217 / 270 / 61 мм",
             "weight": "60,02 т",
@@ -13,7 +13,7 @@
         },
         {
             "id": 2,
-            "name": "ОБЪЕКТ 705А",
+            "name": "ОБЪЕКТ 705А [TEST DATA]",
             "damage": "650 / 650 / 840 ед.",
             "breaking_through": "256 / 317 / 90 мм",
             "weight": "100 т",
@@ -24,7 +24,7 @@
         },
         {
             "id": 3,
-            "name": "MAUS",
+            "name": "MAUS [TEST DATA]",
             "damage": "490 / 490 / 630 ед.",
             "breaking_through": "246 / 311 / 65 мм",
             "weight": "188,98 т",
@@ -35,7 +35,7 @@
         },
         {
             "id": 4,
-            "name": "VK 72.01 (K)",
+            "name": "VK 72.01 (K) [TEST DATA]",
             "damage": "750 / 750 / 950 ед.",
             "breaking_through": "246 / 350 / 85 мм",
             "weight": "120 т",
@@ -46,7 +46,7 @@
         },
         {
             "id": 5,
-            "name": "T110E5",
+            "name": "T110E5 [TEST DATA]",
             "damage": "400 / 400 / 515 ед.",
             "breaking_through": "258 / 340 / 60 мм",
             "weight": "53,76 т",
@@ -57,7 +57,7 @@
         },
         {
             "id": 6,
-            "name": "WZ-111 MODEL 5A",
+            "name": "WZ-111 MODEL 5A [TEST DATA]",
             "damage": "490 / 490 / 640 ед.",
             "breaking_through": "250 / 340 / 65 мм",
             "weight": "50 т",
@@ -68,7 +68,7 @@
         },
         {
             "id": 7,
-            "name": "AMX M4 MLE. 54",
+            "name": "AMX M4 MLE. 54 [TEST DATA]",
             "damage": "400 / 400 / 515 ед.",
             "breaking_through": "264 / 315 / 65 мм",
             "weight": "79,88 т",
@@ -79,7 +79,7 @@
         },
         {
             "id": 8,
-            "name": "FV215B",
+            "name": "FV215B [TEST DATA]",
             "damage": "400 / 400 / 515 ед.",
             "breaking_through": "259 / 326 / 120 мм",
             "weight": "70 т",
@@ -90,7 +90,7 @@
         },
         {
             "id": 9,
-            "name": "TYPE 5 HEAVY",
+            "name": "TYPE 5 HEAVY [TEST DATA]",
             "damage": "900 / 900 ед.",
             "breaking_through": "75 / 192 мм",
             "weight": "151,10 т",
@@ -101,7 +101,7 @@
         },
         {
             "id": 10,
-            "name": "KRANVAGN",
+            "name": "KRANVAGN [TEST DATA]",
             "damage": "440 / 440 / 530 ед.",
             "breaking_through": "252 / 300 / 60 мм",
             "weight": "44,80 т",
@@ -112,7 +112,7 @@
         },
         {
             "id": 11,
-            "name": "60TP LEWANDOWSKIEGO",
+            "name": "60TP LEWANDOWSKIEGO [TEST DATA]",
             "damage": "750 / 750 / 950 ед.",
             "breaking_through": "250 / 317 / 90 мм",
             "weight": "60,13 т",
@@ -125,7 +125,7 @@
     "premium": [
         {
             "id": 1,
-            "name": "ОБЪЕКТ 252У ЗАЩИТНИК  [TEST DATA]",
+            "name": "ОБЪЕКТ 252У ЗАЩИТНИК [TEST DATA]",
             "rapidity": "4 выстр/мин",
             "strength": "1 500 ед.",
             "overview": "350 м"
@@ -251,6 +251,85 @@
             "specific_power": "20 л.с./т",
             "tower_turning_speed": "38 град/с",
             "url": "http://localhost:3000/medium/5"
+        }
+    ],
+    "light": [
+        {
+            "id": 1,
+            "name": "Т-100 ЛТ [TEST DATA]",
+            "level": "X",
+            "weight": "15 т",
+            "overview": "390 м",
+            "maximum_speed": "72 км/ч",
+            "specific_power": "48 л.с./т",
+            "engine_power": "720 л.с",
+            "url": "http://localhost:3000/light/1"
+        },
+        {
+            "id": 2,
+            "name": "RHEINMETALL PANZERWAGEN [TEST DATA]",
+            "level": "X",
+            "weight": "25 т",
+            "overview": "420 м",
+            "maximum_speed": "75 км/ч",
+            "specific_power": "44 л.с./т",
+            "engine_power": "1100 л.с",
+            "url": "http://localhost:3000/light/2"
+        },
+        {
+            "id": 3,
+            "name": "XM551 SHERIDAN [TEST DATA]",
+            "level": "X",
+            "weight": "15,57 т",
+            "overview": "420 м",
+            "maximum_speed": "65 км/ч",
+            "specific_power": "41,74 л.с./т",
+            "engine_power": "650 л.с",
+            "url": "http://localhost:3000/light/3"
+        },
+        {
+            "id": 4,
+            "name": "WZ-132-1 [TEST DATA]",
+            "level": "X",
+            "weight": "30 т",
+            "overview": "400 м",
+            "maximum_speed": "65 км/ч",
+            "specific_power": "36 л.с./т",
+            "engine_power": "1080 л.с",
+            "url": "http://localhost:3000/light/4"
+        },
+        {
+            "id": 5,
+            "name": "AMX 13 105 [TEST DATA]",
+            "level": "X",
+            "weight": "16 т",
+            "overview": "390 м",
+            "maximum_speed": "68 км/ч",
+            "specific_power": "37,50 л.с./т",
+            "engine_power": "1100 л.с",
+            "url": "http://localhost:3000/light/5"
+        },
+        {
+            "id": 6,
+            "name": "PANHARD EBR 105 [TEST DATA]",
+            "level": "X",
+            "weight": "17 т",
+            "overview": "340 м",
+            "maximum_speed": "91 км/ч",
+            "specific_power": "42,35 л.с./т",
+            "engine_power": "720 л.с",
+            "url": "http://localhost:3000/light/6"
+        },
+        {
+            "id": 7,
+            "name": "MANTICORE [TEST DATA]",
+            "level": "X",
+            "weight": "12,40 т",
+            "overview": "400 м",
+            "maximum_speed": "68 км/ч",
+            "specific_power": "42,74 л.с./т",
+            "engine_power": "530 л.с",
+            "url": "http://localhost:3000/light/7"
         }
     ]
 }

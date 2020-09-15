@@ -2,11 +2,13 @@ import ItemList from "../../item-list";
 import { withData, withChildFunction } from "../../../hocs";
 import TankopediaService from "../../../services/tankopedia-service";
 
-const { getAllHeavy, getAllMedium, getAllLight } = new TankopediaService();
+const { getAllHeavy, getAllMedium, getAllLight, getAllPtSau, getAllSau } = new TankopediaService();
 
-const renderNameHeavy = (item) => `${item.name}`;
-const renderNameMedium = (item) => `${item.name}`;
-const renderNameLights = (item) => `${item.name}`;
+const renderNameHeavy = (item) => `${item.name}`;/*  | level X */
+const renderNameMedium = (item) => `${item.name}`;/*  | level X */
+const renderNameLights = (item) => `${item.name}`; /* ${item.level}  |*/
+const renderNamePtSau = (item) => `${item.name}`;
+const renderNameSau = (item) => `${item.name}`;
 
 const HeavyList = withData(
     withChildFunction(ItemList, renderNameHeavy),
@@ -23,4 +25,14 @@ const LightList = withData(
     getAllLight
 );
 
-export { HeavyList, MediumList, LightList };
+const PtSauList = withData(
+    withChildFunction(ItemList, renderNamePtSau),
+    getAllPtSau
+);
+
+const SauList = withData(
+    withChildFunction(ItemList, renderNameSau),
+    getAllSau
+);
+
+export { HeavyList, MediumList, LightList, PtSauList, SauList };

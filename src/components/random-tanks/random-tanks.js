@@ -25,6 +25,7 @@ export default class RandomTanks extends Component {
     this.setState({
       tanks,
       loading: false,
+      error: false
     });
   };
 
@@ -50,12 +51,14 @@ export default class RandomTanks extends Component {
     const hasData = !(loading || error);
 
     const spinner = loading ? <Spinner /> : null;
+    //const errorMessage = error ? <ErrorIndicator /> : null;
     const content = hasData ? <TanksView tanks={tanks} /> : null;
 
     return (
       <div className="random-tanks jumbotron rounded">
         {spinner}
         {content}
+        {/* {errorMessage} */}
       </div>
     );
   }

@@ -45,6 +45,7 @@ const MediumDetails = withService(mediumDetails);
 
 const lightDetails = ({ selectedItem, service }) => {
     const { getLight, getLightImage } = service;
+    console.log(service);
     return (
         <ItemDetails
             selectedItem={selectedItem}
@@ -62,5 +63,40 @@ const lightDetails = ({ selectedItem, service }) => {
 
 const LightDetails = withService(lightDetails);
 
+const ptSauDetails = ({ selectedItem, service }) => {
+    const { getPtSau, getPtSauImage } = service;
+    return (
+        <ItemDetails
+            selectedItem={selectedItem}
+            getData={getPtSau}
+            getImage={getPtSauImage}
+        >
+            <Record label="Ammunition" field="ammunition" />
+            <Record label="Attachment Time" field="attachmentTime" />
+            <Record label="Breaking Through" field="breakingThrough" />
+            <Record label="Damage" field="damage" />
+        </ItemDetails>
+    )
+};
 
-export { HeavyDetails, MediumDetails, LightDetails };
+const PtSauDetails = withService(ptSauDetails);
+
+const sauDetails = ({ selectedItem, service }) => {
+    const { getSau, getSauImage } = service;
+    return (
+        <ItemDetails
+            selectedItem={selectedItem}
+            getData={getSau}
+            getImage={getSauImage}
+        >
+            <Record label="Ammunition" field="ammunition" />
+            <Record label="Breaking Through" field="breakingThrough" />
+            <Record label="Communication Range" field="communicationRange" />
+            <Record label="Damage" field="damage" />
+        </ItemDetails>
+    )
+};
+
+const SauDetails = withService(sauDetails);
+
+export { HeavyDetails, MediumDetails, LightDetails, PtSauDetails, SauDetails };

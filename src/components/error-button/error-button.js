@@ -11,7 +11,6 @@ export default class ErrorButton extends React.Component {
     this.setState(({ counter }) => ({
       counter: counter - 1,
     }));
-    //console.log(this.state.counter);
   }
 
   render() {

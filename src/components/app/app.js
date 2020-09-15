@@ -2,19 +2,23 @@ import React, { Component } from "react";
 
 import Header from "../header";
 import RandomTanks from "../random-tanks";
-import { HeavyList, MediumList, LightList } from "../wot-components/list";
-import { HeavyDetails, MediumDetails, LightDetails } from "../wot-components/details";
 import TankopediaService from "../../services/tankopedia-service";
-import Column from "../column";
 import { TankopediaServiceProvider } from "../../context";
-import TestService from "../../services/test-services";
+import HeavyPage from "../pages/heavy-page";
+import MediumPage from "../pages/medium-page";
+import LightPage from "../pages/linght-page";
+import PtSauPage from "../pages/pt-sau-page";
+import SauPage from "../pages/sau-page";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+//import TestService from "../../services/test-services";
 
 import "./app.css";
 
 export default class App extends Component {
   tankopediaService = new TankopediaService();
   // тест смена сервера с данными
-  testService = new TestService();
+  //testService = new TestService();
 
   state = {
     showRandomTanks: true,
@@ -23,7 +27,7 @@ export default class App extends Component {
     //selectedLight: null,
   };
 
-  onSelectedHeavy = (id) => {
+  /* onSelectedHeavy = (id) => {
     this.setState(() => {
       return {
         selectedHeavy: id,
@@ -45,38 +49,45 @@ export default class App extends Component {
         selectedLight: id,
       };
     });
-  };
+  }; */
 
   render() {
     const tanks = this.state.showRandomTanks ? <RandomTanks /> : null;
-    const { selectedHeavy, selectedMedium, selectedLight } = this.state;
-
-    // тяжёлые танки 
-    const heavyDetails = <HeavyDetails selectedItem={selectedHeavy}></HeavyDetails>;
-    const heavyList = <HeavyList onSelectedItem={this.onSelectedHeavy}></HeavyList>;
-
-    // Средние танки 
-    const mediumDetails = <MediumDetails selectedItem={selectedMedium}></MediumDetails>;
-    const mediumList = <MediumList onSelectedItem={this.onSelectedMedium}></MediumList>;
-
-
-    // лёгкие танки
-    const lightDetails = <LightDetails selectedItem={selectedLight}></LightDetails>;
-    const lightList = <LightList onSelectedItem={this.onSelectedLight}></LightList>;
 
     return (
       <TankopediaServiceProvider value={this.tankopediaService}>
-        <div className="tanksdb-app">
-          <Header />
-          {tanks}
-          {/* тяжёлые танки */}
-          <Column top={heavyDetails} bottom={heavyList}></Column>
-          {/* средние танки */}
-          <Column top={mediumDetails} bottom={mediumList}></Column>
-          {/* лёгкие танки */}
-          <Column top={lightDetails} bottom={lightList}></Column> 
-        </div>
-      </TankopediaServiceProvider>
+        <Router>
+          <div className="tanksdb-app">
+            <Header />
+            {tanks}
+
+            <Switch>
+              <Route
+                path="/"
+                render={() => <h1>Welcome Tankopedia!!!</h1>}
+                exact
+              />
+              <Route path="/heavy" component={HeavyPage} exact />
+              <Route path="/heavy/:id?" component={HeavyPage} />
+
+              <Route path="/medium" component={MediumPage} exact/>
+              <Route path="/medium/:id?" component={MediumPage} />
+              {/* <Route path="/medium/:id" component={MediumPage} /> */}
+
+              <Route path="/light" component={LightPage} exact/>
+              <Route path="/light/:id?" component={LightPage} />
+
+              <Route path="/pt-sau" component={PtSauPage} exact/>
+              <Route path="/pt-sau/:id?" component={PtSauPage} />
+
+              <Route path="/sau" component={SauPage} exact/>
+              <Route path="/sau/:id?" component={SauPage} />
+
+              <Route render={() => <h1>Page not found!</h1>} />
+            </Switch>
+          </div>
+        </Router>
+      </TankopediaServiceProvider >
     );
   }
 }
