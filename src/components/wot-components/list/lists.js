@@ -7,7 +7,7 @@ const { getAllHeavy, getAllMedium, getAllLight, getAllPtSau, getAllSau } = new T
 const renderNameHeavy = (item) => `${item.name}`;/*  | level X */
 const renderNameMedium = (item) => `${item.name}`;/*  | level X */
 const renderNameLights = (item) => `${item.name}`; /* ${item.level}  |*/
-const renderNamePtSau = (item) => `${item.name}`;
+const renderNamePtSau = (item) => `${item.name} ///// ${item.contry}`;
 const renderNameSau = (item) => `${item.name}`;
 
 const HeavyList = withData(

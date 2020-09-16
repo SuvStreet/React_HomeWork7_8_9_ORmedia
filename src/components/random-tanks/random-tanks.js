@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import Spinner from "../spinner";
+import ErrorApp from "../error-app";
 import TankopediaService from "../../services/tankopedia-service";
 
 import "./random-tanks.css";
@@ -51,14 +52,14 @@ export default class RandomTanks extends Component {
     const hasData = !(loading || error);
 
     const spinner = loading ? <Spinner /> : null;
-    //const errorMessage = error ? <ErrorIndicator /> : null;
+    const errorMessage = error ? <ErrorApp /> : null;
     const content = hasData ? <TanksView tanks={tanks} /> : null;
 
     return (
       <div className="random-tanks jumbotron rounded">
         {spinner}
         {content}
-        {/* {errorMessage} */}
+        {errorMessage}
       </div>
     );
   }

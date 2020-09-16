@@ -1,7 +1,7 @@
 export default class TankopediaService {
 
-_apiBase = 'https://cors-anywhere.herokuapp.com/http://gallerytvr.site/api/';
-//_apiBase = 'http://localhost:3000';
+//_apiBase = 'https://cors-anywhere.herokuapp.com/http://gallerytvr.site/api/';
+_apiBase = 'http://localhost:3000';
 
   getResource = async (url) => {
     const res = await fetch(`${this._apiBase}${url}`);
@@ -56,7 +56,7 @@ _apiBase = 'https://cors-anywhere.herokuapp.com/http://gallerytvr.site/api/';
 
   getAllPtSau = async () => {
     const res = await this.getResource(`/pt-sau/`);
-    console.log(res);
+    //console.log(res);
     return res  //res.results
       .map(this._transformPtSau)
       .slice(0, 15);
@@ -166,6 +166,7 @@ _apiBase = 'https://cors-anywhere.herokuapp.com/http://gallerytvr.site/api/';
       id: ptSau.id,
       name: ptSau.name,
       level: ptSau.level,
+      contry: ptSau.contry,
       ammunition: ptSau.ammunition,
       attachmentTime: ptSau.attachment_time,
       breakingThrough: ptSau.breaking_through,

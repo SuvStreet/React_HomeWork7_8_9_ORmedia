@@ -63,8 +63,6 @@ export default class ItemDetails extends Component {
       return <span>Select a person from a list</span>;
     }
 
-    console.log(itemsInfo);
-
     return (
       <div className="tanks-details card">
         {<img

@@ -251,6 +251,36 @@
             "specific_power": "20 л.с./т",
             "tower_turning_speed": "38 град/с",
             "url": "http://localhost:3000/medium/5"
+        },
+        {
+            "id": 6,
+            "name": "Т-22 СР. [TEST DATA]",
+            "damage": "320 / 320 / 420 ед.",
+            "breaking_through": "264 / 330 / 50 мм",
+            "maximum_speed": "55 км/ч",
+            "specific_power": "20,83 л.с./т",
+            "tower_turning_speed": "30 град/с",
+            "url": "http://localhost:3000/medium/6"
+        },
+        {
+            "id": 7,
+            "name": "CS-63 [TEST DATA]",
+            "damage": "390 / 390 / 510 ед.",
+            "breaking_through": "258 / 315 / 53 мм",
+            "maximum_speed": "70 км/ч",
+            "specific_power": "28,15 л.с./т",
+            "tower_turning_speed": "50 град/с",
+            "url": "http://localhost:3000/medium/7"
+        },
+        {
+            "id": 8,
+            "name": "STB-1 [TEST DATA]",
+            "damage": "360 / 360 / 440 ед.",
+            "breaking_through": "258 / 330 / 53 мм",
+            "maximum_speed": "50 км/ч",
+            "specific_power": "25,40 л.с./т",
+            "tower_turning_speed": "50 град/с",
+            "url": "http://localhost:3000/medium/8"
         }
     ],
     "light": [
@@ -330,6 +360,142 @@
             "specific_power": "42,74 л.с./т",
             "engine_power": "530 л.с",
             "url": "http://localhost:3000/light/7"
+        }
+    ],
+    "pt-sau": [
+        {
+            "id": 1,
+            "name": "ОБЪЕКТ 268 ВАРИАНТ 4 [TEST DATA]",
+            "level": "X",
+            "contry": "SSSR",
+            "ammunition": "30 шт",
+            "attachment_time": "2,50 с",
+            "breaking_through": "293 / 360 / 90 мм",
+            "damage": "650 / 650 / 840 ед.",
+            "url": "http://localhost:3000/pt-sau/1"
+        },
+        {
+            "id": 2,
+            "name": "JAGDPANZER E 100 [TEST DATA]",
+            "level": "X",
+            "contry": "germany",
+            "ammunition": "24 шт",
+            "attachment_time": "2,70 с",
+            "breaking_through": "299 / 420 / 85 мм",
+            "damage": "1 050 / 1 050 / 1 400 ед.",
+            "url": "http://localhost:3000/pt-sau/2"
+        },
+        {
+            "id": 3,
+            "name": "T110E4 [TEST DATA]",
+            "level": "X",
+            "contry": "USA",
+            "ammunition": "27 шт",
+            "attachment_time": "2,90 с",
+            "breaking_through": "295 / 375 / 90 мм",
+            "damage": "750 / 750 / 1 100 ед.",
+            "url": "http://localhost:3000/pt-sau/3"
+        },
+        {
+            "id": 4,
+            "name": "WZ-113G FT [TEST DATA]",
+            "level": "X",
+            "contry": "china",
+            "ammunition": "35 шт",
+            "attachment_time": "2,50 с",
+            "breaking_through": "290 / 395 / 90 мм",
+            "damage": "750 / 750 / 1 100 ед.",
+            "url": "http://localhost:3000/pt-sau/4"
+        },
+        {
+            "id": 5,
+            "name": "AMX 50 FOCH (155) [TEST DATA]",
+            "level": "X",
+            "contry": "france",
+            "ammunition": "30 шт",
+            "attachment_time": "3 с",
+            "breaking_through": "293 / 395 / 90 мм",
+            "damage": "750 / 750 / 1 100 ед.",
+            "url": "http://localhost:3000/pt-sau/5"
+        },
+        {
+            "id": 6,
+            "name": "FV215B (183) [TEST DATA]",
+            "level": "X",
+            "contry": "great_britain",
+            "ammunition": "20 шт",
+            "attachment_time": "3,40 с",
+            "breaking_through": "310 / 230 / 92 мм",
+            "damage": "1 150 / 1 750 / 1 750 ед.",
+            "url": "http://localhost:3000/pt-sau/6"
+        },
+        {
+            "id": 7,
+            "name": "STRV 103B [TEST DATA]",
+            "level": "X",
+            "contry": "sweden",
+            "ammunition": "50 шт",
+            "attachment_time": "1 с",
+            "breaking_through": "308 / 350 / 53 мм",
+            "damage": "390 / 390 / 480 ед.",
+            "url": "http://localhost:3000/pt-sau/7"
+        }
+    ],
+    "sau": [
+        {
+            "id": 1,
+            "name": "ОБЪЕКТ 261 [TEST DATA]",
+            "level": "X",
+            "contry": "SSSR",
+            "ammunition": "20 шт",
+            "breaking_through": "45 / 45 мм",
+            "communication_range": "720 м",
+            "damage": "900 / 900 ед.",
+            "url": "http://localhost:3000/sau/1"
+        },
+        {
+            "id": 2,
+            "name": "G.W. E 100 [TEST DATA]",
+            "level": "X",
+            "contry": "germany",
+            "ammunition": "30 шт",
+            "breaking_through": "53 / 53 мм",
+            "communication_range": "720 м",
+            "damage": "1 100 / 1 100 ед.",
+            "url": "http://localhost:3000/sau/2"
+        },
+        {
+            "id": 3,
+            "name": "T92 HMC [TEST DATA]",
+            "level": "X",
+            "contry": "USA",
+            "ammunition": "16 шт",
+            "breaking_through": "60 / 60 мм",
+            "communication_range": "745 м",
+            "damage": "1 300 / 1 300 ед.",
+            "url": "http://localhost:3000/sau/3"
+        },
+        {
+            "id": 4,
+            "name": "BAT.-CHÂTILLON 155 58 [TEST DATA]",
+            "level": "X",
+            "contry": "france",
+            "ammunition": "36 шт",
+            "breaking_through": "48 / 48 мм",
+            "communication_range": "750 м",
+            "damage": "750 / 750 ед.",
+            "url": "http://localhost:3000/sau/4"
+        },
+        {
+            "id": 5,
+            "name": "CONQUEROR GUN CARRIAGE [TEST DATA]",
+            "level": "X",
+            "contry": "great_britain",
+            "ammunition": "24 шт",
+            "breaking_through": "59 / 59 мм",
+            "communication_range": "750 м",
+            "damage": "1 200 / 1 200 ед.",
+            "url": "http://localhost:3000/sau/5"
         }
     ]
 }
